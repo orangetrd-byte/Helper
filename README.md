@@ -25,6 +25,7 @@ Standalone beginner lathe setup app.
 - The setup wizard is grouped into beginner-friendly stages: Machine, Stock, Tools, Touch-Off, and Verify.
 - Each wizard stage explains what to check and why it matters before the operator moves forward.
 - The setup wizard includes beginner definitions for shop terms such as stickout, control confirmed, work zero, offsets, single block, and feed override.
+- Touch-off guidance explains where to check diameter/radius mode in the program safety block, setup sheet, active modal display, and control-specific G-codes such as G7/G8 where applicable.
 - Touch, Move, Notes, and Speeds / Feeds include small field-level helper text so a new operator is not expected to know the terms first.
 - The touch-off helper includes inline warnings for common mistakes such as diameter/radius confusion and large offset corrections.
 - Touch-off calculations can be saved to a recent history list.
