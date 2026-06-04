@@ -52,6 +52,9 @@
     .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#fff;font-weight:900}
     .tip-list{display:grid;gap:10px}
     .tip{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px}
+    .definition-grid{display:grid;gap:10px}
+    .definition{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px}
+    .definition b{display:block;margin-bottom:4px}
     .check{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px}
     .check input{width:22px;height:22px;accent-color:var(--primary);margin-top:2px}
     .progress{height:10px;background:#d5e5e5;border-radius:999px;overflow:hidden;margin:10px 0}
@@ -105,6 +108,17 @@
           <div class="tip">Confirm X mode: diameter or radius. This is the most common beginner mistake.</div>
           <div class="tip">Set feed override low and prove the first move in single block.</div>
           <div class="tip">Know your retract path before you move toward the part.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Beginner Definitions</h3>
+        <div class="definition-grid">
+          <div class="definition"><b>Control confirmed</b><p>Make sure you are standing at the correct machine control, the right program or manual screen is active, and the control is in the mode you think it is in.</p></div>
+          <div class="definition"><b>Stickout</b><p>The amount of part or tool hanging out unsupported. Long stickout can cause chatter, taper, bad finish, or a crash if it hits jaws or tooling.</p></div>
+          <div class="definition"><b>Work zero</b><p>The part location the program uses as zero. On a lathe this is often the finished face for Z and the spindle centerline for X.</p></div>
+          <div class="definition"><b>Offset</b><p>A saved correction that tells the control where the part or tool really is. If the wrong offset is active, the machine can move to the wrong place.</p></div>
+          <div class="definition"><b>Single block</b><p>A control mode that runs one line of the program at a time. It gives you a chance to stop and verify each move during prove-out.</p></div>
+          <div class="definition"><b>Feed override</b><p>A knob or setting that slows down programmed feed moves. Start low when proving a new setup or offset change.</p></div>
         </div>
       </div>
     </section>
@@ -209,7 +223,7 @@
         <div class="card"><h3>Lathe Setup Tips</h3><div class="tip-list"><div class="tip">Face first when possible so Z zero is clean and repeatable.</div><div class="tip">Keep stickout short. Long stickout changes chatter, taper, and tool life.</div><div class="tip">Confirm chuck pressure, jaw contact, and part stop before cycle start.</div></div></div>
         <div class="card"><h3>Touch-off Tips</h3><div class="tip-list"><div class="tip">Write down whether X was set in diameter or radius mode.</div><div class="tip">After touching Z face, retract in X or Z before jogging quickly.</div><div class="tip">Measure twice before changing an offset by a large amount.</div></div></div>
         <div class="card"><h3>Safe Approach / Retract</h3><div class="tip-list"><div class="tip">Rapid to clearance, feed near the part.</div><div class="tip">Single block first move after offset changes.</div><div class="tip">Retract clear before tool change, restart, or index.</div></div></div>
-        <div class="card"><h3>Symbols & Meanings</h3><table><tr><th>Symbol</th><th>Meaning</th></tr><tr><td>X</td><td>Cross-slide axis. Often diameter on lathes.</td></tr><tr><td>Z</td><td>Spindle axis. Face direction depends on machine/control setup.</td></tr><tr><td>SFM</td><td>Surface feet per minute.</td></tr><tr><td>IPR</td><td>Feed per spindle revolution.</td></tr><tr><td>Wear</td><td>Small offset correction after setup.</td></tr></table></div>
+        <div class="card"><h3>Symbols & Meanings</h3><table><tr><th>Term</th><th>Meaning</th></tr><tr><td>X</td><td>Cross-slide axis. On many CNC lathes, X is shown as diameter, so a .010 X change can mean .005 per side.</td></tr><tr><td>Z</td><td>Spindle-length axis. Z usually controls movement toward or away from the face of the part.</td></tr><tr><td>Control</td><td>The machine computer and panel. Confirm the correct machine, mode, screen, program, and active offsets before moving.</td></tr><tr><td>Work zero</td><td>The part reference point the job is built from. It is not the same thing as machine home.</td></tr><tr><td>Machine zero</td><td>The machine's fixed reference/home position. The part is usually located by work offsets from this reference.</td></tr><tr><td>Work offset</td><td>The saved location of the part zero. Common examples are G54, G55, and G56.</td></tr><tr><td>Tool offset</td><td>The saved position correction for a tool. It tells the control where that tool tip is.</td></tr><tr><td>Wear offset</td><td>A small fine correction after setup, often used to bring a measured part into tolerance.</td></tr><tr><td>Touch-off</td><td>The act of carefully finding where a tool touches the part, stock, face, gauge, or known surface.</td></tr><tr><td>Chuck</td><td>The clamp that holds the part while it spins.</td></tr><tr><td>Jaws</td><td>The gripping blocks inside the chuck. Watch clearance near jaws during approach and retract.</td></tr><tr><td>Grip</td><td>How much material the jaws are holding. Too little grip can be unsafe.</td></tr><tr><td>Stickout</td><td>The amount of part or tool sticking out unsupported. Shorter is usually more rigid and safer.</td></tr><tr><td>Air move</td><td>A test move made away from the material so you can confirm direction and path before cutting.</td></tr><tr><td>Single block</td><td>A mode that runs one line of program at a time. Useful for first moves after setup changes.</td></tr><tr><td>Feed override</td><td>A control setting that slows or speeds feed moves. Use low feed override when proving out.</td></tr><tr><td>Safe retract</td><td>A planned move away from the part, jaws, chuck, shoulder, or tool before rapid moves or tool changes.</td></tr><tr><td>SFM</td><td>Surface feet per minute. A cutting speed value based on material, tool, and part diameter.</td></tr><tr><td>RPM</td><td>Spindle revolutions per minute. How fast the part or tool rotates.</td></tr><tr><td>IPR</td><td>Inches per revolution. How far the tool feeds for each spindle turn on a lathe.</td></tr></table></div>
       </div>
     </section>
   </main>

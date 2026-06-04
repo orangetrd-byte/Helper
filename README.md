@@ -22,6 +22,7 @@ Standalone beginner lathe setup app.
 - Uses localStorage for notes, checklist state, timestamped note log, sample job state, and last selected page.
 - Includes a simple PWA manifest and service worker.
 - First launch loads a sample job so a beginner can see how the app is meant to be used.
+- The setup wizard includes beginner definitions for shop terms such as stickout, control confirmed, work zero, offsets, single block, and feed override.
 - The touch-off helper includes inline warnings for common mistakes such as diameter/radius confusion and large offset corrections.
 - Touch-off calculations can be saved to a recent history list.
 - Job Notes includes a handoff summary with print and JSON export support.
