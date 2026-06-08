@@ -1,5 +1,5 @@
-const CACHE_NAME = 'touch-off-helper-v2';
-const APP_SHELL = ['./', './index.html', './manifest.json'];
+const CACHE_NAME = 'touch-off-helper-v3-update-helper';
+const APP_SHELL = ['./', './index.html', './update-helper.js', './manifest.json'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
@@ -13,21 +13,33 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
+self.addEventListener('message', event => {
+  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+});
+
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  if (event.request.mode === 'navigate') {
+  const url = new URL(event.request.url);
+  const freshFirst = event.request.mode === 'navigate' || /\.(html|js|css|json)$/i.test(url.pathname);
+
+  if (freshFirst) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
           const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy));
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
           return response;
         })
-        .catch(() => caches.match('./index.html'))
+        .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
     );
     return;
   }
+
   event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request).catch(() => caches.match('./index.html')))
+    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+      return response;
+    }).catch(() => caches.match('./index.html')))
   );
 });

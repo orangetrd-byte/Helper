@@ -430,5 +430,6 @@
     if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'))}
     ensureSample();loadNotes();renderWizard();renderFeeds();renderTouchHistory();renderHandoff();showPage(localStorage.getItem('touch-page')||'wizard');
   </script>
+  <script src="./update-helper.js"></script>
 </body>
 </html>
