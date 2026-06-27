@@ -30,6 +30,23 @@ Standalone beginner lathe setup app.
 - The touch-off helper includes inline warnings for common mistakes such as diameter/radius confusion and large offset corrections.
 - Touch-off calculations can be saved to a recent history list.
 - Job Notes includes a handoff summary with print and JSON export support.
+## Current Project Status
+
+**Status as of June 27, 2026:** Back-burner / legacy helper repo.
+
+Helper is not the current focus. CNC Work Helper and Green Hat are the active split of the helper idea: CNC Work Helper for more capable shop tools, Green Hat for true beginners.
+
+Where it stands:
+
+- This repo should be maintained only for preservation, small fixes, or reference unless explicitly reactivated.
+- Do not use this repo as the main place for new CNC Work Helper or Green Hat features.
+- If useful ideas are found here, move them intentionally into the correct active repo instead of expanding this one.
+- MGP build/version information must remain visible and cannot be removed.
+
+Next practical focus:
+
+- Leave stable unless a specific cleanup, documentation, or migration task is requested.
+
 ## Assistant Change Guidelines
 
 Before making code or file changes in this repo:
@@ -46,3 +63,4 @@ Before making code or file changes in this repo:
 10. Optimize only for a named goal such as clarity, reliability, readability, offline use, or beginner safety.
 
 Permanent rule: MGP must remain visible in build/version information and cannot be removed, hidden, renamed, or replaced.
+
