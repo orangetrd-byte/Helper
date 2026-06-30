@@ -2,12 +2,13 @@
 
 ## Active Phase
 
-Phase 0: Local Shipyard Prototype
+Phase 0.2: First-Use Tutorial
 
 ## Current Focus
 
 - Repurpose this legacy Helper repo into Shipyard.
 - Keep the first build static, mobile-friendly, and local-first.
+- Explain Inlet, Floor, Gate, Hangar, Live Log, and local controls on first use.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
@@ -21,3 +22,5 @@ Phase 0: Local Shipyard Prototype
 
 - Every version/build update must keep the letters MGP visible in the app's build or version information.
 - MGP cannot be removed, hidden, renamed, or replaced during future updates.
+
+

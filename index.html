@@ -19,14 +19,15 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;box-shadow:var(--shadow)}.stat span{display:block;font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.stat strong{display:block;margin-top:5px;font-size:24px}.stat.blue strong{color:var(--blue)}.stat.green strong{color:var(--green)}.stat.amber strong{color:var(--amber)}.stat.red strong{color:var(--red)}
 .lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.lane{background:#f8fafc;border:1px solid var(--line);border-radius:8px;min-height:360px;display:flex;flex-direction:column}.lane-title{padding:10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--steel)}.lane-list{padding:10px;display:grid;gap:9px}.task{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;display:grid;gap:8px}.task h4{font-size:13px;line-height:1.25}.meta{display:flex;gap:6px;flex-wrap:wrap}.pill{border-radius:999px;padding:3px 7px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.pill.fix{background:var(--red2);color:var(--red)}.pill.feature{background:var(--blue2);color:var(--blue)}.pill.experiment{background:var(--amber2);color:var(--amber)}.pill.junk{background:#eef1f4;color:var(--muted)}.pill.must{background:var(--red);color:#fff}.pill.should{background:var(--amber);color:#fff}.pill.meh{background:#6b7780;color:#fff}.task p{color:var(--muted);font-size:12px;line-height:1.45}.task-actions{display:flex;gap:6px;flex-wrap:wrap}.task-actions button{border:1px solid var(--line2);background:#fff;border-radius:7px;padding:5px 7px;font-size:11px;font-weight:800}.task-actions button.good{background:var(--green2);color:var(--green);border-color:#b8dfcb}.task-actions button.bad{background:var(--red2);color:var(--red);border-color:#efb7b3}
 .log{height:330px;overflow:auto;background:#101820;color:#dce5eb;border-radius:8px;padding:12px;font-family:Consolas,Menlo,monospace;font-size:12px;line-height:1.6}.log b{color:#77b7ff}.memory{display:grid;gap:10px}.memory-item{border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}.memory-item strong{font-size:13px}.memory-item p{color:var(--muted);font-size:12px;margin-top:5px;line-height:1.45}.gate-list{display:grid;gap:10px}.empty{color:var(--muted);font-size:12px;text-align:center;padding:24px;border:1px dashed var(--line2);border-radius:8px;background:#fafbfc}
+.tutorial{position:fixed;inset:0;background:rgba(10,16,20,.72);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.tutorial.show{display:flex}.tutorial-card{width:min(820px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.28);border:1px solid var(--line)}.tutorial-head{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.tutorial-head h2{font-size:20px}.tutorial-head p{color:var(--muted);font-size:13px;margin-top:4px;line-height:1.45}.tutorial-close{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:7px 10px;font-weight:900}.tutorial-body{padding:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.tutorial-step{border:1px solid var(--line);border-radius:8px;padding:12px;background:#fafbfc}.tutorial-step strong{display:block;font-size:13px;margin-bottom:5px}.tutorial-step p{color:var(--muted);font-size:12px;line-height:1.45}.tutorial-foot{padding:14px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.tutorial-foot label{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}
 @media(max-width:1150px){.grid{grid-template-columns:1fr}.lanes{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}aside{position:relative;height:auto}.app{grid-template-columns:1fr}}
-@media(max-width:680px){main{padding:10px}.topbar{align-items:flex-start;flex-direction:column}.lanes,.stats{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.brand p{font-size:10px}}
+@media(max-width:680px){main{padding:10px}.topbar{align-items:flex-start;flex-direction:column}.lanes,.stats{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.brand p{font-size:10px}.tutorial{padding:10px;align-items:flex-end}.tutorial-card{max-height:94vh;border-radius:10px 10px 0 0}.tutorial-body{grid-template-columns:1fr}.tutorial-head h2{font-size:18px}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside>
-  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi/Codex Ops Console · MGP v0.1</p></div></div>
+  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi/Codex Ops Console · MGP v0.2</p></div></div>
   <div class="nav">
     <button class="active" data-jump="inlet">Inlet<span>capture the mess</span></button>
     <button data-jump="floor">Floor<span>watch the work</span></button>
@@ -42,8 +43,8 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 </aside>
 <main>
   <section class="topbar">
-    <div><h2>Controlled build room for Codi/Codex</h2><p>Messy idea in. Tracked task out. No merge without the Gate. MGP build v0.1.</p></div>
-    <div class="actions"><button class="btn" id="seedBtn">Seed demo</button><button class="btn red" id="resetBtn">Clear local</button><button class="btn primary" id="exportBtn">Export JSON</button></div>
+    <div><h2>Controlled build room for Codi/Codex</h2><p>Messy idea in. Tracked task out. No merge without the Gate. MGP build v0.2.</p></div>
+    <div class="actions"><button class="btn" id="helpBtn">Help</button><button class="btn" id="seedBtn">Seed demo</button><button class="btn red" id="resetBtn">Clear local</button><button class="btn primary" id="exportBtn">Export JSON</button></div>
   </section>
   <section class="stats">
     <div class="stat blue"><span>Inlet</span><strong id="stat-inlet">0</strong></div>
@@ -91,8 +92,29 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
   </section>
 </main>
 </div>
+<div class="tutorial" id="tutorial" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+  <div class="tutorial-card">
+    <div class="tutorial-head">
+      <div><h2 id="tutorialTitle">First time in Shipyard</h2><p>Shipyard is the control room around Codi/Codex work. It turns rough ideas into tracked build tasks, then forces a review before anything gets treated as shipped.</p></div>
+      <button class="tutorial-close" id="tutorialClose" aria-label="Close tutorial">Close</button>
+    </div>
+    <div class="tutorial-body">
+      <div class="tutorial-step"><strong>Inlet</strong><p>Start here. Add a title, type, priority, and messy note. This is where Herman-style rough ideas become task cards.</p></div>
+      <div class="tutorial-step"><strong>Floor</strong><p>The board shows where every card sits: Inlet, Queued, Working, or Gate. Use Move to push work forward.</p></div>
+      <div class="tutorial-step"><strong>Gate</strong><p>Anything at Gate needs a decision. Ship it saves the result. Tweak sends it back. Scrap removes it.</p></div>
+      <div class="tutorial-step"><strong>Hangar</strong><p>Approved work lands here as memory: what was shipped, why it mattered, and what can be reused later.</p></div>
+      <div class="tutorial-step"><strong>Live Log</strong><p>This records what happened while you work. Later this can become real Codi/Codex command and test output.</p></div>
+      <div class="tutorial-step"><strong>Buttons</strong><p>Seed demo adds sample cards. Clear local wipes this phone browser data. Export JSON saves the current Shipyard state.</p></div>
+    </div>
+    <div class="tutorial-foot">
+      <label><input type="checkbox" id="tutorialDontShow"> Do not show this again on this device</label>
+      <button class="btn primary" id="tutorialStart">Start using Shipyard</button>
+    </div>
+  </div>
+</div>
 <script>
 const KEY='shipyard.local.v1';
+const TUTORIAL_KEY='shipyard.tutorial.seen.v1';
 const lanes=['inlet','queued','working','gate'];
 const laneNames={inlet:'Inlet',queued:'Queued',working:'Working',gate:'Gate'};
 let state=load();
@@ -110,8 +132,11 @@ function exportJson(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'
 function taskHtml(t){const next=t.status==='inlet'?'queued':t.status==='queued'?'working':t.status==='working'?'gate':'gate';const controls=t.status==='gate'?`<button class="good" onclick="approve('${t.id}')">Ship it</button><button onclick="move('${t.id}','working')">Tweak</button><button class="bad" onclick="scrap('${t.id}')">Scrap</button>`:`<button onclick="move('${t.id}','${next}')">Move</button><button class="bad" onclick="scrap('${t.id}')">Scrap</button>`;return `<article class="task"><h4>${esc(t.title)}</h4><div class="meta"><span class="pill ${t.type}">${t.type}</span><span class="pill ${t.priority}">${t.priority}</span></div><p>${esc(t.note||'No note supplied.')}</p><p><b>Diff preview:</b><br>${esc(t.diff||'No diff yet.').replace(/\n/g,'<br>')}</p><div class="task-actions">${controls}</div></article>`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function render(){document.getElementById('lanes').innerHTML=lanes.map(l=>`<div class="lane"><div class="lane-title"><span>${laneNames[l]}</span><span>${state.tasks.filter(t=>t.status===l).length}</span></div><div class="lane-list">${state.tasks.filter(t=>t.status===l).map(taskHtml).join('')||'<div class="empty">No cards</div>'}</div></div>`).join('');document.getElementById('gateList').innerHTML=state.tasks.filter(t=>t.status==='gate').map(taskHtml).join('')||'<div class="empty">No approvals waiting.</div>';document.getElementById('memory').innerHTML=state.memory.map(m=>`<div class="memory-item"><strong>${esc(m.title)}</strong><p>${esc(m.body)}</p><p>${esc(m.at)}</p></div>`).join('')||'<div class="empty">Hangar is empty.</div>';document.getElementById('log').innerHTML=state.events.map(e=>`<div><b>${esc(e.at)}</b> ${esc(e.text)}</div>`).join('')||'<div><b>ready</b> Waiting for Inlet.</div>';document.getElementById('stat-inlet').textContent=state.tasks.filter(t=>t.status==='inlet').length;document.getElementById('stat-floor').textContent=state.tasks.filter(t=>['queued','working'].includes(t.status)).length;document.getElementById('stat-gate').textContent=state.tasks.filter(t=>t.status==='gate').length;document.getElementById('stat-hangar').textContent=state.memory.length}
-document.getElementById('addBtn').addEventListener('click',addTask);document.getElementById('seedBtn').addEventListener('click',seed);document.getElementById('resetBtn').addEventListener('click',reset);document.getElementById('exportBtn').addEventListener('click',exportJson);document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-jump]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'})}));render();
+function showTutorial(){document.getElementById('tutorial').classList.add('show')}
+function hideTutorial(){if(document.getElementById('tutorialDontShow').checked)localStorage.setItem(TUTORIAL_KEY,'yes');document.getElementById('tutorial').classList.remove('show')}
+document.getElementById('addBtn').addEventListener('click',addTask);document.getElementById('helpBtn').addEventListener('click',showTutorial);document.getElementById('seedBtn').addEventListener('click',seed);document.getElementById('resetBtn').addEventListener('click',reset);document.getElementById('exportBtn').addEventListener('click',exportJson);document.getElementById('tutorialClose').addEventListener('click',hideTutorial);document.getElementById('tutorialStart').addEventListener('click',hideTutorial);document.getElementById('tutorial').addEventListener('click',e=>{if(e.target.id==='tutorial')hideTutorial()});document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-jump]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'})}));render();if(localStorage.getItem(TUTORIAL_KEY)!=='yes')showTutorial();
 </script>
 </body>
 </html>
+
 
