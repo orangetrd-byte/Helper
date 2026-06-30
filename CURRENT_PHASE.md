@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 0.6: Refresh from Codi
+Phase 0.8: Codi tasks in Workshop lanes
 
 ## Current Focus
 
@@ -12,12 +12,13 @@ Phase 0.6: Refresh from Codi
 - Hide GitHub/dev wording from the main mobile UI.
 - Add Send to Codi as a safe, prefilled GitHub handoff without storing tokens.
 - Add Refresh from Codi to show open Shipyard tasks from GitHub without login.
+- Blend refreshed Codi tasks into the Workshop Waiting lane instead of a separate block.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
 ## Next Actions
 
-- Verify deployed GitHub Pages URL on mobile.
+- Verify refreshed Codi tasks appear in Waiting on the deployed GitHub Pages URL.
 - Decide whether to rename the GitHub repository from Helper to Shipyard.
 - Wire Phase 0 cards to GitHub issues or pull requests only after the prototype feels useful.
 
