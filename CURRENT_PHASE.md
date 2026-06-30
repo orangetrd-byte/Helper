@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 0.3: Human-First Wording
+Phase 0.5: Send to Codi
 
 ## Current Focus
 
@@ -10,6 +10,7 @@ Phase 0.3: Human-First Wording
 - Keep the first build static, mobile-friendly, and local-first.
 - Explain Drop Idea, Workshop, You're OK, Saved Stuff, What Happened, and local controls on first use.
 - Hide GitHub/dev wording from the main mobile UI.
+- Add Send to Codi as a safe, prefilled GitHub handoff without storing tokens.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
@@ -23,6 +24,7 @@ Phase 0.3: Human-First Wording
 
 - Every version/build update must keep the letters MGP visible in the app's build or version information.
 - MGP cannot be removed, hidden, renamed, or replaced during future updates.
+
 
 
 
