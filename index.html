@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shipyard | Codi/Codex Operations Console</title>
+<title>Shipyard | Codi Workbench</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#f4f6f8;--ink:#172026;--muted:#61707b;--panel:#fff;--line:#d9e0e6;--line2:#c5ced6;--blue:#1f6feb;--blue2:#eaf2ff;--green:#198754;--green2:#e7f5ee;--amber:#b7791f;--amber2:#fff6df;--red:#c2413a;--red2:#fdeceb;--steel:#2e3a43;--radius:8px;--shadow:0 1px 2px rgba(20,30,40,.06),0 8px 28px rgba(20,30,40,.08);font-family:Inter,Segoe UI,Arial,sans-serif}
@@ -27,66 +27,66 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 <body>
 <div class="app">
 <aside>
-  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi/Codex Ops Console · MGP v0.2</p></div></div>
+  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi Workbench · MGP v0.3</p></div></div>
   <div class="nav">
-    <button class="active" data-jump="inlet">Inlet<span>capture the mess</span></button>
-    <button data-jump="floor">Floor<span>watch the work</span></button>
-    <button data-jump="gate">Gate<span>approve or scrap</span></button>
-    <button data-jump="hangar">Hangar<span>memory and reuse</span></button>
+    <button class="active" data-jump="inlet">Drop Idea<span>rough thoughts go here</span></button>
+    <button data-jump="floor">Workshop<span>work in progress</span></button>
+    <button data-jump="gate">Your OK<span>decide what happens</span></button>
+    <button data-jump="hangar">Saved Stuff<span>keep what matters</span></button>
   </div>
   <div class="crew">
-    <h2>Local crew</h2>
-    <div class="crew-row"><span><i class="dot"></i>qwen2.5-coder:3b</span><span>scout</span></div>
+    <h2>Codi helpers</h2>
+    <div class="crew-row"><span><i class="dot"></i>qwen2.5-coder:3b</span><span>idea scout</span></div>
     <div class="crew-row"><span><i class="dot"></i>qwen2.5-coder:7b</span><span>builder</span></div>
-    <div class="crew-row"><span><i class="dot"></i>deepseek-coder:6.7b</span><span>risk</span></div>
+    <div class="crew-row"><span><i class="dot"></i>deepseek-coder:6.7b</span><span>risk check</span></div>
   </div>
 </aside>
 <main>
   <section class="topbar">
-    <div><h2>Controlled build room for Codi/Codex</h2><p>Messy idea in. Tracked task out. No merge without the Gate. MGP build v0.2.</p></div>
-    <div class="actions"><button class="btn" id="helpBtn">Help</button><button class="btn" id="seedBtn">Seed demo</button><button class="btn red" id="resetBtn">Clear local</button><button class="btn primary" id="exportBtn">Export JSON</button></div>
+    <div><h2>Drop ideas. Check work. Approve what looks good.</h2><p>Put the rough idea here, let Codi do the hard part, then decide what stays. MGP build v0.3.</p></div>
+    <div class="actions"><button class="btn" id="helpBtn">Help</button><button class="btn" id="seedBtn">Try demo</button><button class="btn red" id="resetBtn">Clear this device</button><button class="btn primary" id="exportBtn">Export backup</button></div>
   </section>
   <section class="stats">
-    <div class="stat blue"><span>Inlet</span><strong id="stat-inlet">0</strong></div>
-    <div class="stat amber"><span>Floor</span><strong id="stat-floor">0</strong></div>
-    <div class="stat red"><span>Gate</span><strong id="stat-gate">0</strong></div>
-    <div class="stat green"><span>Hangar</span><strong id="stat-hangar">0</strong></div>
+    <div class="stat blue"><span>Drop Idea</span><strong id="stat-inlet">0</strong></div>
+    <div class="stat amber"><span>Workshop</span><strong id="stat-floor">0</strong></div>
+    <div class="stat red"><span>Your OK</span><strong id="stat-gate">0</strong></div>
+    <div class="stat green"><span>Saved Stuff</span><strong id="stat-hangar">0</strong></div>
   </section>
   <section class="grid" id="inlet">
     <div class="panel">
-      <div class="panel-head"><div><h3>Inlet</h3><small>Drop rough intent here</small></div></div>
+      <div class="panel-head"><div><h3>Drop Idea</h3><small>Tell Codi what you want</small></div></div>
       <div class="panel-body">
-        <div class="field"><label>Title</label><input id="title" placeholder="Build approval queue"></div>
-        <div class="field"><label>Type</label><select id="type"><option value="feature">feature</option><option value="fix">fix</option><option value="experiment">experiment</option><option value="junk">junk</option></select></div>
-        <div class="field"><label>Priority</label><select id="priority"><option value="must">must</option><option value="should">should</option><option value="meh">meh</option></select></div>
-        <div class="field"><label>Messy note</label><textarea id="note" placeholder="Paste Herman's idea, a bug note, a screenshot summary, or a rough command for Codi."></textarea></div>
-        <button class="btn primary" id="addBtn">Create task card</button>
+        <div class="field"><label>Title</label><input id="title" placeholder="Make this easier to use"></div>
+        <div class="field"><label>Kind of idea</label><select id="type"><option value="feature">new thing</option><option value="fix">fix something</option><option value="experiment">try it</option><option value="junk">maybe later</option></select></div>
+        <div class="field"><label>How important</label><select id="priority"><option value="must">need it</option><option value="should">would help</option><option value="meh">not urgent</option></select></div>
+        <div class="field"><label>Notes</label><textarea id="note" placeholder="Paste Herman's idea, a problem, a screenshot note, or anything you want Codi to shape."></textarea></div>
+        <button class="btn primary" id="addBtn">Save Idea</button>
       </div>
     </div>
     <div class="panel" id="floor">
-      <div class="panel-head"><div><h3>Floor</h3><small>Build board</small></div></div>
+      <div class="panel-head"><div><h3>Workshop</h3><small>Where ideas move forward</small></div></div>
       <div class="panel-body"><div class="lanes" id="lanes"></div></div>
     </div>
     <div class="panel">
-      <div class="panel-head"><div><h3>Live Log</h3><small>Prototype event stream</small></div></div>
+      <div class="panel-head"><div><h3>What Happened</h3><small>Recent activity</small></div></div>
       <div class="panel-body"><div class="log" id="log"></div></div>
     </div>
   </section>
   <section class="grid" id="gate">
     <div class="panel">
-      <div class="panel-head"><div><h3>Gate</h3><small>Explicit approvals</small></div></div>
+      <div class="panel-head"><div><h3>Your OK</h3><small>Approve, change, or toss</small></div></div>
       <div class="panel-body"><div class="gate-list" id="gateList"></div></div>
     </div>
     <div class="panel" id="hangar">
-      <div class="panel-head"><div><h3>Hangar</h3><small>Saved decisions and reusable memory</small></div></div>
+      <div class="panel-head"><div><h3>Saved Stuff</h3><small>Approved ideas and decisions</small></div></div>
       <div class="panel-body"><div class="memory" id="memory"></div></div>
     </div>
     <div class="panel">
-      <div class="panel-head"><div><h3>Workflow Contract</h3><small>Prototype rules</small></div></div>
+      <div class="panel-head"><div><h3>House Rules</h3><small>How this first version behaves</small></div></div>
       <div class="panel-body memory">
-        <div class="memory-item"><strong>No silent ship</strong><p>Tasks can move to done, but they are not saved to Hangar until Gate approval.</p></div>
-        <div class="memory-item"><strong>Local-first prototype</strong><p>Everything here is stored in browser localStorage. No keys, accounts, or remote execution.</p></div>
-        <div class="memory-item"><strong>GitHub-backed next</strong><p>Phase 0 can map cards to issues, Gate to pull requests, and Hangar to repo docs.</p></div>
+        <div class="memory-item"><strong>Nothing ships by surprise</strong><p>Ideas can move forward, but they are not saved until you say they look good.</p></div>
+        <div class="memory-item"><strong>This device only for now</strong><p>Cards you make here stay in this browser on this device. No accounts or private keys are used.</p></div>
+        <div class="memory-item"><strong>Real Codi handoff comes next</strong><p>The next step is sending ideas to the real project tracker without making you handle developer details.</p></div>
       </div>
     </div>
   </section>
@@ -95,20 +95,20 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 <div class="tutorial" id="tutorial" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
   <div class="tutorial-card">
     <div class="tutorial-head">
-      <div><h2 id="tutorialTitle">First time in Shipyard</h2><p>Shipyard is the control room around Codi/Codex work. It turns rough ideas into tracked build tasks, then forces a review before anything gets treated as shipped.</p></div>
+      <div><h2 id="tutorialTitle">First time using Shipyard</h2><p>Shipyard is where rough ideas become work for Codi. You drop the idea, watch it move, then decide whether it looks good.</p></div>
       <button class="tutorial-close" id="tutorialClose" aria-label="Close tutorial">Close</button>
     </div>
     <div class="tutorial-body">
-      <div class="tutorial-step"><strong>Inlet</strong><p>Start here. Add a title, type, priority, and messy note. This is where Herman-style rough ideas become task cards.</p></div>
-      <div class="tutorial-step"><strong>Floor</strong><p>The board shows where every card sits: Inlet, Queued, Working, or Gate. Use Move to push work forward.</p></div>
-      <div class="tutorial-step"><strong>Gate</strong><p>Anything at Gate needs a decision. Ship it saves the result. Tweak sends it back. Scrap removes it.</p></div>
-      <div class="tutorial-step"><strong>Hangar</strong><p>Approved work lands here as memory: what was shipped, why it mattered, and what can be reused later.</p></div>
-      <div class="tutorial-step"><strong>Live Log</strong><p>This records what happened while you work. Later this can become real Codi/Codex command and test output.</p></div>
-      <div class="tutorial-step"><strong>Buttons</strong><p>Seed demo adds sample cards. Clear local wipes this phone browser data. Export JSON saves the current Shipyard state.</p></div>
+      <div class="tutorial-step"><strong>Drop Idea</strong><p>Start here. Add a short title, pick what kind of idea it is, choose how important it feels, and write the messy note.</p></div>
+      <div class="tutorial-step"><strong>Workshop</strong><p>This board shows where each idea sits: dropped, waiting, being built, or waiting for your OK.</p></div>
+      <div class="tutorial-step"><strong>Your OK</strong><p>Anything here needs your decision. Looks Good saves it. Needs Changes sends it back. Toss It removes it.</p></div>
+      <div class="tutorial-step"><strong>Saved Stuff</strong><p>Approved work lands here so you can remember what mattered and reuse it later.</p></div>
+      <div class="tutorial-step"><strong>What Happened</strong><p>This records what changed while you use Shipyard. Later it can show real Codi progress.</p></div>
+      <div class="tutorial-step"><strong>Buttons</strong><p>Try demo adds sample cards. Clear this device wipes this phone browser data. Export backup saves the current Shipyard state.</p></div>
     </div>
     <div class="tutorial-foot">
       <label><input type="checkbox" id="tutorialDontShow"> Do not show this again on this device</label>
-      <button class="btn primary" id="tutorialStart">Start using Shipyard</button>
+      <button class="btn primary" id="tutorialStart">Start</button>
     </div>
   </div>
 </div>
@@ -116,27 +116,32 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 const KEY='shipyard.local.v1';
 const TUTORIAL_KEY='shipyard.tutorial.seen.v1';
 const lanes=['inlet','queued','working','gate'];
-const laneNames={inlet:'Inlet',queued:'Queued',working:'Working',gate:'Gate'};
+const laneNames={inlet:'Dropped',queued:'Waiting',working:'Being Built',gate:'Your OK'};
 let state=load();
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||{tasks:[],memory:[],events:[]}}catch{return{tasks:[],memory:[],events:[]}}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function stamp(){return new Date().toLocaleString([], {month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'})}
 function event(text){state.events.unshift({at:stamp(),text});state.events=state.events.slice(0,80);save();render()}
-function addTask(){const title=document.getElementById('title').value.trim();const note=document.getElementById('note').value.trim();if(!title&&!note)return;const task={id:crypto.randomUUID(),title:title||note.slice(0,42),note,type:document.getElementById('type').value,priority:document.getElementById('priority').value,status:'inlet',created:stamp(),diff:'No diff yet. This prototype tracks intent before wiring a runner.'};state.tasks.unshift(task);document.getElementById('title').value='';document.getElementById('note').value='';event('Inlet captured: '+task.title)}
-function move(id,status){const task=state.tasks.find(t=>t.id===id);if(!task)return;task.status=status;task.updated=stamp();if(status==='working')task.diff='Simulated files touched:\n- app/workflow.ts\n- docs/decision-log.md\n- tests/approval-gate.test.ts';event(task.title+' moved to '+laneNames[status])}
-function approve(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.memory.unshift({id:crypto.randomUUID(),title:task.title,body:'Approved at Gate. Type: '+task.type+'. Priority: '+task.priority+'. Note: '+(task.note||'No note.'),at:stamp()});state.tasks=state.tasks.filter(t=>t.id!==id);event('Gate approved: '+task.title)}
-function scrap(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.tasks=state.tasks.filter(t=>t.id!==id);event('Scrapped at Gate: '+task.title)}
-function seed(){if(state.tasks.length||state.memory.length)return;state.tasks=[{id:crypto.randomUUID(),title:'Turn Herman notes into task cards',note:'Use Shipyard Inlet to structure rough ideas before Codi builds.',type:'feature',priority:'must',status:'queued',created:stamp(),diff:'No diff yet.'},{id:crypto.randomUUID(),title:'Require Gate before merge',note:'No surprise pushes. Approval must be explicit.',type:'fix',priority:'must',status:'gate',created:stamp(),diff:'Files touched:\n- gate-policy.md\n- pull-request-template.md'},{id:crypto.randomUUID(),title:'Live Floor status feed',note:'Show status, touched files, and command tail while Codi works.',type:'experiment',priority:'should',status:'working',created:stamp(),diff:'Files touched:\n- runner/events.json\n- ui/floor-feed.js'}];state.memory=[{id:crypto.randomUUID(),title:'Decision: start local-first',body:'Prototype as static PWA with localStorage before wiring hosted runners or GitHub APIs.',at:stamp()}];state.events=[{at:stamp(),text:'Demo crew assembled'}];save();render()}
+function addTask(){const title=document.getElementById('title').value.trim();const note=document.getElementById('note').value.trim();if(!title&&!note)return;const task={id:crypto.randomUUID(),title:title||note.slice(0,42),note,type:document.getElementById('type').value,priority:document.getElementById('priority').value,status:'inlet',created:stamp(),diff:'No work preview yet. This first version saves the idea before Codi is connected.'};state.tasks.unshift(task);document.getElementById('title').value='';document.getElementById('note').value='';event('Idea saved: '+task.title)}
+function move(id,status){const task=state.tasks.find(t=>t.id===id);if(!task)return;task.status=status;task.updated=stamp();if(status==='working')task.diff='Sample work preview:\\n- idea shaped\\n- next step chosen\\n- waiting for your OK';event(task.title+' moved to '+laneNames[status])}
+function approve(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.memory.unshift({id:crypto.randomUUID(),title:task.title,body:'You said this looked good. Kind: '+kindLabel(task.type)+'. Importance: '+priorityLabel(task.priority)+'. Note: '+(task.note||'No note.'),at:stamp()});state.tasks=state.tasks.filter(t=>t.id!==id);event('Looks good: '+task.title)}
+function scrap(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.tasks=state.tasks.filter(t=>t.id!==id);event('Tossed: '+task.title)}
+function seed(){if(state.tasks.length||state.memory.length)return;state.tasks=[{id:crypto.randomUUID(),title:'Turn Herman notes into saved ideas',note:'Use Drop Idea to save rough thoughts before Codi builds.',type:'feature',priority:'must',status:'queued',created:stamp(),diff:'No work preview yet.'},{id:crypto.randomUUID(),title:'Ask before anything changes',note:'No surprises. You decide when something looks good.',type:'fix',priority:'must',status:'gate',created:stamp(),diff:'Work preview:\\n- approval step added\\n- decision saved'},{id:crypto.randomUUID(),title:'Show what is happening',note:'Show simple status while Codi works.',type:'experiment',priority:'should',status:'working',created:stamp(),diff:'Work preview:\\n- status shown\\n- recent activity saved'}];state.memory=[{id:crypto.randomUUID(),title:'Decision: start on this device',body:'Start with a simple phone-friendly version before connecting Codi to real project work.',at:stamp()}];state.events=[{at:stamp(),text:'Demo crew assembled'}];save();render()}
 function reset(){if(confirm('Clear all local Shipyard prototype data?')){state={tasks:[],memory:[],events:[]};save();render()}}
 function exportJson(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='shipyard-export.json';a.click();URL.revokeObjectURL(url)}
-function taskHtml(t){const next=t.status==='inlet'?'queued':t.status==='queued'?'working':t.status==='working'?'gate':'gate';const controls=t.status==='gate'?`<button class="good" onclick="approve('${t.id}')">Ship it</button><button onclick="move('${t.id}','working')">Tweak</button><button class="bad" onclick="scrap('${t.id}')">Scrap</button>`:`<button onclick="move('${t.id}','${next}')">Move</button><button class="bad" onclick="scrap('${t.id}')">Scrap</button>`;return `<article class="task"><h4>${esc(t.title)}</h4><div class="meta"><span class="pill ${t.type}">${t.type}</span><span class="pill ${t.priority}">${t.priority}</span></div><p>${esc(t.note||'No note supplied.')}</p><p><b>Diff preview:</b><br>${esc(t.diff||'No diff yet.').replace(/\n/g,'<br>')}</p><div class="task-actions">${controls}</div></article>`}
+function taskHtml(t){const next=t.status==='inlet'?'queued':t.status==='queued'?'working':t.status==='working'?'gate':'gate';const controls=t.status==='gate'?`<button class="good" onclick="approve('${t.id}')">Looks Good</button><button onclick="move('${t.id}','working')">Needs Changes</button><button class="bad" onclick="scrap('${t.id}')">Toss It</button>`:`<button onclick="move('${t.id}','${next}')">Move Along</button><button class="bad" onclick="scrap('${t.id}')">Toss It</button>`;return `<article class="task"><h4>${esc(t.title)}</h4><div class="meta"><span class="pill ${t.type}">${kindLabel(t.type)}</span><span class="pill ${t.priority}">${priorityLabel(t.priority)}</span></div><p>${esc(t.note||'No note supplied.')}</p><p><b>Work preview:</b><br>${esc(t.diff||'No work preview yet.').replace(/\n/g,'<br>')}</p><div class="task-actions">${controls}</div></article>`}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-function render(){document.getElementById('lanes').innerHTML=lanes.map(l=>`<div class="lane"><div class="lane-title"><span>${laneNames[l]}</span><span>${state.tasks.filter(t=>t.status===l).length}</span></div><div class="lane-list">${state.tasks.filter(t=>t.status===l).map(taskHtml).join('')||'<div class="empty">No cards</div>'}</div></div>`).join('');document.getElementById('gateList').innerHTML=state.tasks.filter(t=>t.status==='gate').map(taskHtml).join('')||'<div class="empty">No approvals waiting.</div>';document.getElementById('memory').innerHTML=state.memory.map(m=>`<div class="memory-item"><strong>${esc(m.title)}</strong><p>${esc(m.body)}</p><p>${esc(m.at)}</p></div>`).join('')||'<div class="empty">Hangar is empty.</div>';document.getElementById('log').innerHTML=state.events.map(e=>`<div><b>${esc(e.at)}</b> ${esc(e.text)}</div>`).join('')||'<div><b>ready</b> Waiting for Inlet.</div>';document.getElementById('stat-inlet').textContent=state.tasks.filter(t=>t.status==='inlet').length;document.getElementById('stat-floor').textContent=state.tasks.filter(t=>['queued','working'].includes(t.status)).length;document.getElementById('stat-gate').textContent=state.tasks.filter(t=>t.status==='gate').length;document.getElementById('stat-hangar').textContent=state.memory.length}
+function kindLabel(value){return {feature:'new thing',fix:'fix something',experiment:'try it',junk:'maybe later'}[value]||value}
+function priorityLabel(value){return {must:'need it',should:'would help',meh:'not urgent'}[value]||value}
+function render(){document.getElementById('lanes').innerHTML=lanes.map(l=>`<div class="lane"><div class="lane-title"><span>${laneNames[l]}</span><span>${state.tasks.filter(t=>t.status===l).length}</span></div><div class="lane-list">${state.tasks.filter(t=>t.status===l).map(taskHtml).join('')||'<div class="empty">Nothing here yet</div>'}</div></div>`).join('');document.getElementById('gateList').innerHTML=state.tasks.filter(t=>t.status==='gate').map(taskHtml).join('')||'<div class="empty">Nothing needs your OK.</div>';document.getElementById('memory').innerHTML=state.memory.map(m=>`<div class="memory-item"><strong>${esc(m.title)}</strong><p>${esc(m.body)}</p><p>${esc(m.at)}</p></div>`).join('')||'<div class="empty">Nothing saved yet.</div>';document.getElementById('log').innerHTML=state.events.map(e=>`<div><b>${esc(e.at)}</b> ${esc(e.text)}</div>`).join('')||'<div><b>ready</b> Waiting for an idea.</div>';document.getElementById('stat-inlet').textContent=state.tasks.filter(t=>t.status==='inlet').length;document.getElementById('stat-floor').textContent=state.tasks.filter(t=>['queued','working'].includes(t.status)).length;document.getElementById('stat-gate').textContent=state.tasks.filter(t=>t.status==='gate').length;document.getElementById('stat-hangar').textContent=state.memory.length}
 function showTutorial(){document.getElementById('tutorial').classList.add('show')}
 function hideTutorial(){if(document.getElementById('tutorialDontShow').checked)localStorage.setItem(TUTORIAL_KEY,'yes');document.getElementById('tutorial').classList.remove('show')}
 document.getElementById('addBtn').addEventListener('click',addTask);document.getElementById('helpBtn').addEventListener('click',showTutorial);document.getElementById('seedBtn').addEventListener('click',seed);document.getElementById('resetBtn').addEventListener('click',reset);document.getElementById('exportBtn').addEventListener('click',exportJson);document.getElementById('tutorialClose').addEventListener('click',hideTutorial);document.getElementById('tutorialStart').addEventListener('click',hideTutorial);document.getElementById('tutorial').addEventListener('click',e=>{if(e.target.id==='tutorial')hideTutorial()});document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-jump]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'})}));render();if(localStorage.getItem(TUTORIAL_KEY)!=='yes')showTutorial();
 </script>
 </body>
 </html>
+
+
+
 
 
