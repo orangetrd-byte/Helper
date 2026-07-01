@@ -20,7 +20,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
 aside{background:#172026;color:#fff;padding:18px;border-right:1px solid #0f171c;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh}
 .brand{display:flex;gap:12px;align-items:center}.mark{width:42px;height:42px;border-radius:8px;background:#fff;color:#172026;display:grid;place-items:center;font-weight:900;letter-spacing:.04em}.brand h1{font-size:20px;line-height:1}.brand p{color:#aab6bf;font-size:11px;margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
 .nav{display:grid;gap:7px}.nav button{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#dce5eb;border-radius:8px;text-align:left;padding:10px 12px}.nav button.active{background:#fff;color:#172026}.nav button span{display:block;font-size:11px;color:inherit;opacity:.68;margin-top:2px}
-.crew{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;display:grid;gap:8px}.crew h2{font-size:12px;color:#aab6bf;text-transform:uppercase;letter-spacing:.08em}.crew-row{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#dce5eb}.dot{width:8px;height:8px;border-radius:50%;background:#40c463;display:inline-block;margin-right:6px}
+.crew{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:14px;display:grid;gap:8px}.crew h2{font-size:12px;color:#aab6bf;text-transform:uppercase;letter-spacing:.08em}.crew-row{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#dce5eb}.crew-note{font-size:11px;color:#aab6bf;line-height:1.35}.dot{width:8px;height:8px;border-radius:50%;background:#40c463;display:inline-block;margin-right:6px}.dot.human{background:#77b7ff}.dot.codi{background:#f2c14e}.dot.idle{background:#6b7780}
 main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px}.topbar h2{font-size:18px}.topbar p{color:var(--muted);font-size:12px;margin-top:2px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line2);background:#fff;color:var(--steel);border-radius:8px;padding:8px 11px;font-weight:700;font-size:12px}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.green{background:var(--green);border-color:var(--green);color:#fff}.btn.red{background:var(--red2);border-color:#f0b9b5;color:var(--red)}
 .grid{display:grid;grid-template-columns:1.05fr 1.35fr .9fr;gap:14px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);min-width:0}.panel-head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head h3{font-size:14px}.panel-head small{color:var(--muted);font-size:11px}.panel-body{padding:14px}.field{display:grid;gap:5px;margin-bottom:10px}.field label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:9px 10px;color:var(--ink);outline:none}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,111,235,.12)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;box-shadow:var(--shadow)}.stat span{display:block;font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.stat strong{display:block;margin-top:5px;font-size:24px}.stat.blue strong{color:var(--blue)}.stat.green strong{color:var(--green)}.stat.amber strong{color:var(--amber)}.stat.red strong{color:var(--red)}
@@ -34,7 +34,7 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 <body>
 <div class="app">
 <aside>
-  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi Workbench · MGP v1.5</p></div></div>
+  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi Workbench · MGP v1.6</p></div></div>
   <div class="nav">
     <button class="active" data-jump="inlet">Drop Idea<span>rough thoughts go here</span></button>
     <button data-jump="floor">Workshop<span>work in progress</span></button>
@@ -42,15 +42,21 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
     <button data-jump="hangar">Saved Stuff<span>keep what matters</span></button>
   </div>
   <div class="crew">
-    <h2>Codi helpers</h2>
-    <div class="crew-row"><span><i class="dot"></i>qwen2.5-coder:3b</span><span>idea scout</span></div>
-    <div class="crew-row"><span><i class="dot"></i>qwen2.5-coder:7b</span><span>builder</span></div>
-    <div class="crew-row"><span><i class="dot"></i>deepseek-coder:6.7b</span><span>risk check</span></div>
+    <h2>Shipyard team</h2>
+    <div class="crew-row"><span><i class="dot human"></i>Dad</span><span>final OK</span></div>
+    <div class="crew-row"><span><i class="dot human"></i>Herman</span><span>source</span></div>
+    <div class="crew-row"><span><i class="dot codi"></i>Codi</span><span>builder</span></div>
+    <div class="crew-row"><span><i class="dot"></i>Designer</span><span>layout</span></div>
+    <div class="crew-row"><span><i class="dot"></i>Scout</span><span>qwen2.5 3b</span></div>
+    <div class="crew-row"><span><i class="dot"></i>Builder</span><span>qwen2.5 7b</span></div>
+    <div class="crew-row"><span><i class="dot"></i>Risk check</span><span>deepseek</span></div>
+    <div class="crew-row"><span><i class="dot idle"></i>qwen3.6</span><span>back burner</span></div>
+    <p class="crew-note">Daily work uses the quick helpers. Heavy thinker stays excluded unless Dad asks.</p>
   </div>
 </aside>
 <main>
   <section class="topbar">
-    <div><h2>Drop ideas. Check work. Approve what looks good.</h2><p>Put the rough idea here, let Codi do the hard part, then decide what stays. MGP build v1.5.</p></div>
+    <div><h2>Drop ideas. Check work. Approve what looks good.</h2><p>Put the rough idea here, let Codi do the hard part, then decide what stays. MGP build v1.6.</p></div>
     <div class="actions"><button class="btn" id="helpBtn">Help</button><button class="btn" id="seedBtn">Try demo</button><button class="btn red" id="resetBtn">Clear this device</button><button class="btn primary" id="exportBtn">Export backup</button></div>
   </section>
   <section class="stats">
