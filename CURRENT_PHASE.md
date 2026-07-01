@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.10: Hermes joins the crew
+Phase 1.11: Clear team labels
 
 ## Current Focus
 
@@ -24,6 +24,7 @@ Phase 1.10: Hermes joins the crew
 - Resolve old issue clutter with generalized team labels, dark mode, and a clearable activity log.
 - Make Send to Codi the primary Drop Idea action and label the browser-only path as Keep local.
 - Add Hermes to the Shipyard team as the runner/messenger role.
+- Rename the vague Source crew slot to Idea Source.
 - Keep the GitHub issue form as a fallback when the bridge is unavailable.
 - Show a clear local status when the Codi bridge is not ready.
 - Add Windows scripts to start the local Codi bridge and install it at login.
