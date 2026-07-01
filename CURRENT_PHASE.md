@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.3: Bridge autostart helper
+Phase 1.4: Mobile Codi bridge
 
 ## Current Focus
 
@@ -17,6 +17,7 @@ Phase 1.3: Bridge autostart helper
 - Add a local Waiting card immediately when Dad sends an idea to Codi.
 - Replace local sent cards with live Codi cards after Refresh from Codi.
 - Send ideas straight through a local bridge when it is running.
+- Send ideas through the Cloudflare bridge first for mobile.
 - Keep the GitHub issue form as a fallback when the bridge is unavailable.
 - Show a clear local status when the Codi bridge is not ready.
 - Add Windows scripts to start the local Codi bridge and install it at login.
@@ -25,7 +26,7 @@ Phase 1.3: Bridge autostart helper
 
 ## Next Actions
 
-- Verify Send to Codi creates a GitHub task directly when the bridge is running.
+- Verify Send to Codi creates a GitHub task from desktop and mobile.
 - Decide whether to rename the GitHub repository from Helper to Shipyard.
 - Wire Phase 0 cards to GitHub issues or pull requests only after the prototype feels useful.
 
