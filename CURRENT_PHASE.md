@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.8: Issue cleanup pass
+Phase 1.9: Send to Codi by default
 
 ## Current Focus
 
@@ -22,6 +22,7 @@ Phase 1.8: Issue cleanup pass
 - Show the full Shipyard team: Dad, Herman, Codi, four helpers, and qwen3.6 parked on the back burner.
 - Make the phone PWA feel more app-like with bottom navigation, a tighter header, and easier thumb targets.
 - Resolve old issue clutter with generalized team labels, dark mode, and a clearable activity log.
+- Make Send to Codi the primary Drop Idea action and label the browser-only path as Keep local.
 - Keep the GitHub issue form as a fallback when the bridge is unavailable.
 - Show a clear local status when the Codi bridge is not ready.
 - Add Windows scripts to start the local Codi bridge and install it at login.

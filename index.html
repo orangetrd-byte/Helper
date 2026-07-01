@@ -35,7 +35,7 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 <body>
 <div class="app">
 <aside>
-  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi Workbench · MGP v1.8</p></div></div>
+  <div class="brand"><div class="mark">SY</div><div><h1>Shipyard</h1><p>Codi Workbench · MGP v1.9</p></div></div>
   <div class="nav">
     <button class="active" data-jump="inlet">Drop Idea<span>rough thoughts go here</span></button>
     <button data-jump="floor">Workshop<span>work in progress</span></button>
@@ -57,7 +57,7 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
 </aside>
 <main>
   <section class="topbar">
-    <div><h2>Drop ideas. Check work. Approve what looks good.</h2><p>Put the rough idea here, let the crew do the hard part, then decide what stays. MGP build v1.8.</p></div>
+    <div><h2>Drop ideas. Check work. Approve what looks good.</h2><p>Put the rough idea here, let the crew do the hard part, then decide what stays. MGP build v1.9.</p></div>
     <div class="actions"><button class="btn" id="helpBtn">Help</button><button class="btn" id="themeBtn">Dark</button><button class="btn" id="seedBtn">Try demo</button><button class="btn red" id="resetBtn">Clear this device</button><button class="btn primary" id="exportBtn">Export backup</button></div>
   </section>
   <section class="stats">
@@ -74,7 +74,7 @@ main{padding:18px;display:grid;gap:14px}.topbar{background:var(--panel);border:1
         <div class="field"><label>Kind of idea</label><select id="type"><option value="feature">new thing</option><option value="fix">fix something</option><option value="experiment">try it</option><option value="junk">maybe later</option></select></div>
         <div class="field"><label>How important</label><select id="priority"><option value="must">need it</option><option value="should">would help</option><option value="meh">not urgent</option></select></div>
         <div class="field"><label>Notes</label><textarea id="note" placeholder="Paste Herman's idea, a problem, a screenshot note, or anything you want Codi to shape."></textarea></div>
-        <div class="actions"><button class="btn primary" id="addBtn">Save Idea</button><button class="btn green" id="sendBtn">Send to Codi</button></div>
+        <div class="actions"><button class="btn green" id="sendBtn">Send to Codi</button><button class="btn" id="addBtn">Keep local</button></div>
       </div>
     </div>
     <div class="panel" id="floor">
@@ -140,7 +140,7 @@ function load(){try{return JSON.parse(localStorage.getItem(KEY))||{tasks:[],memo
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function stamp(){return new Date().toLocaleString([], {month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'})}
 function logEvent(text){state.events.unshift({at:stamp(),text});state.events=state.events.slice(0,80);save();render()}
-function addTask(){const title=document.getElementById('title').value.trim();const note=document.getElementById('note').value.trim();if(!title&&!note)return;const task={id:crypto.randomUUID(),title:title||note.slice(0,42),note,type:document.getElementById('type').value,priority:document.getElementById('priority').value,status:'inlet',created:stamp(),diff:'No work preview yet. This first version saves the idea before Codi is connected.'};state.tasks.unshift(task);document.getElementById('title').value='';document.getElementById('note').value='';logEvent('Idea saved: '+task.title)}
+function addTask(){const title=document.getElementById('title').value.trim();const note=document.getElementById('note').value.trim();if(!title&&!note)return;const task={id:crypto.randomUUID(),title:title||note.slice(0,42),note,type:document.getElementById('type').value,priority:document.getElementById('priority').value,status:'inlet',created:stamp(),diff:'Local note only. Codi cannot see this until you send it.'};state.tasks.unshift(task);document.getElementById('title').value='';document.getElementById('note').value='';logEvent('Kept local only: '+task.title)}
 function move(id,status){const task=state.tasks.find(t=>t.id===id);if(!task)return;task.status=status;task.updated=stamp();if(status==='working')task.diff='Sample work preview:\\n- idea shaped\\n- next step chosen\\n- waiting for your OK';logEvent(task.title+' moved to '+laneNames[status])}
 function approve(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.memory.unshift({id:crypto.randomUUID(),title:task.title,body:'You said this looked good. Kind: '+kindLabel(task.type)+'. Importance: '+priorityLabel(task.priority)+'. Note: '+(task.note||'No note.'),at:stamp()});state.tasks=state.tasks.filter(t=>t.id!==id);logEvent('Looks good: '+task.title)}
 function scrap(id){const task=state.tasks.find(t=>t.id===id);if(!task)return;state.tasks=state.tasks.filter(t=>t.id!==id);logEvent('Tossed: '+task.title)}
