@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.0: Smoother Codi handoff
+Phase 1.1: Local Codi bridge
 
 ## Current Focus
 
@@ -16,12 +16,14 @@ Phase 1.0: Smoother Codi handoff
 - Keep repeated Codi issues from showing as duplicate Waiting cards.
 - Add a local Waiting card immediately when Dad sends an idea to Codi.
 - Replace local sent cards with live Codi cards after Refresh from Codi.
+- Send ideas straight through a local bridge when it is running.
+- Keep the GitHub issue form as a fallback when the bridge is unavailable.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
 ## Next Actions
 
-- Verify Send to Codi adds a Waiting card before Refresh.
+- Verify Send to Codi creates a GitHub task directly when the bridge is running.
 - Decide whether to rename the GitHub repository from Helper to Shipyard.
 - Wire Phase 0 cards to GitHub issues or pull requests only after the prototype feels useful.
 
