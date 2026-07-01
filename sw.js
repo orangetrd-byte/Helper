@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shipyard-mgp-v1.1';
+const CACHE_NAME = 'shipyard-mgp-v1.2';
 const APP_SHELL = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', event => {

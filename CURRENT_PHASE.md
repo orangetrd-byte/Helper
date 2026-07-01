@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.1: Local Codi bridge
+Phase 1.2: Bridge fallback clarity
 
 ## Current Focus
 
@@ -18,6 +18,7 @@ Phase 1.1: Local Codi bridge
 - Replace local sent cards with live Codi cards after Refresh from Codi.
 - Send ideas straight through a local bridge when it is running.
 - Keep the GitHub issue form as a fallback when the bridge is unavailable.
+- Show a clear local status when the Codi bridge is not ready.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
