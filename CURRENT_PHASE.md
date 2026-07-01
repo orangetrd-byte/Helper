@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 1.7: Phone app shell polish
+Phase 1.8: Issue cleanup pass
 
 ## Current Focus
 
@@ -21,6 +21,7 @@ Phase 1.7: Phone app shell polish
 - Make Shipyard installable from phone browser with a correct manifest, app icons, and service worker registration.
 - Show the full Shipyard team: Dad, Herman, Codi, four helpers, and qwen3.6 parked on the back burner.
 - Make the phone PWA feel more app-like with bottom navigation, a tighter header, and easier thumb targets.
+- Resolve old issue clutter with generalized team labels, dark mode, and a clearable activity log.
 - Keep the GitHub issue form as a fallback when the bridge is unavailable.
 - Show a clear local status when the Codi bridge is not ready.
 - Add Windows scripts to start the local Codi bridge and install it at login.
