@@ -2,7 +2,7 @@
 
 ## Active Phase
 
-Phase 0.9: De-duplicated Codi tasks
+Phase 1.0: Smoother Codi handoff
 
 ## Current Focus
 
@@ -14,12 +14,14 @@ Phase 0.9: De-duplicated Codi tasks
 - Add Refresh from Codi to show open Shipyard tasks from GitHub without login.
 - Blend refreshed Codi tasks into the Workshop Waiting lane instead of a separate block.
 - Keep repeated Codi issues from showing as duplicate Waiting cards.
+- Add a local Waiting card immediately when Dad sends an idea to Codi.
+- Replace local sent cards with live Codi cards after Refresh from Codi.
 - Preserve explicit approval flow before any future merge/deploy automation.
 - Keep MGP visible in version/build information.
 
 ## Next Actions
 
-- Verify refreshed Codi tasks appear in Waiting on the deployed GitHub Pages URL.
+- Verify Send to Codi adds a Waiting card before Refresh.
 - Decide whether to rename the GitHub repository from Helper to Shipyard.
 - Wire Phase 0 cards to GitHub issues or pull requests only after the prototype feels useful.
 
