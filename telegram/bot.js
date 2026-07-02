@@ -26,6 +26,13 @@ async function api(method, payload = {}) {
   return json.result;
 }
 
+function makeReplyPayload(reply, opts = {}) {
+  if (typeof reply === 'string') {
+    return { text: reply, ...opts };
+  }
+  return { ...reply, ...opts };
+}
+
 async function poll() {
   let offset = 0;
   console.log('🤖 Shipyard Telegram bot polling...');
@@ -38,13 +45,14 @@ async function poll() {
         offset = update.update_id + 1;
 
         if (update.message && update.message.text) {
-          const text = update.message.text.trim();
+          const raw = update.message.text.trim();
+          const text = raw.replace(/@\S+$/, '').trim();
           if (text.startsWith('/inlet')) {
-            await handleInlet({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...msg, ...opts }) });
+            await handleInlet({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...makeReplyPayload(msg, opts) }) });
           } else if (text === '/floor') {
-            await handleFloor({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...msg, ...opts }) });
+            await handleFloor({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...makeReplyPayload(msg, opts) }) });
           } else if (text.startsWith('/hangar')) {
-            await handleHangar({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...msg, ...opts }) });
+            await handleHangar({ message: update.message, reply: (msg, opts) => api('sendMessage', { chat_id: update.message.chat.id, ...makeReplyPayload(msg, opts) }) });
           } else {
             await api('sendMessage', { chat_id: update.message.chat.id, text: 'Commands: /inlet <text>, /floor, /hangar [query]' });
           }
